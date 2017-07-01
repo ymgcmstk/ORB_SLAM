@@ -151,9 +151,9 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
-        FramePub.Refresh();
-        MapPub.Refresh();
-        Tracker.CheckResetByPublishers();
+        FramePub.Refresh(); // TODO
+        MapPub.Refresh(); // TODO
+        Tracker.CheckResetByPublishers(); // TODO
         r.sleep();
     }
 
