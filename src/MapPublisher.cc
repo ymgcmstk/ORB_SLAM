@@ -128,7 +128,7 @@ void MapPublisher::Refresh()
     {
         vector<KeyFrame*> vKeyFrames = mpMap->GetAllKeyFrames();
         vector<MapPoint*> vMapPoints = mpMap->GetAllMapPoints();
-        vector<MapPoint*> vRefMapPoints = mpMap->GetReferenceMapPoints();
+        vector<MapPoint*> vRefMapPoints = mpMap->GetReferenceMapPoints(); // ymgc: what is the difference between vMapPoints and vRefMapPoints?
 
         PublishMapPoints(vMapPoints, vRefMapPoints);   
         PublishKeyFrames(vKeyFrames);
@@ -149,7 +149,7 @@ void MapPublisher::PublishMapPoints(const vector<MapPoint*> &vpMPs, const vector
         if(vpMPs[i]->isBad() || spRefMPs.count(vpMPs[i]))
             continue;
         geometry_msgs::Point p;
-        cv::Mat pos = vpMPs[i]->GetWorldPos();
+        cv::Mat pos = vpMPs[i]->GetWorldPos(); // ymgc: TODO
         p.x=pos.at<float>(0);
         p.y=pos.at<float>(1);
         p.z=pos.at<float>(2);
