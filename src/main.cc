@@ -151,7 +151,7 @@ int main(int argc, char **argv)
 
     while (ros::ok())
     {
-        FramePub.Refresh(); // TODO
+        FramePub.Refresh(); // draw a current image
         MapPub.Refresh(); // TODO
         Tracker.CheckResetByPublishers(); // TODO
         r.sleep();
